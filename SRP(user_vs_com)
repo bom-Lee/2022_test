@@ -1,0 +1,74 @@
+import numpy as np
+import random
+
+SRP = {"Scissors", "Rock", "Paper"}
+# 게임횟수 ## 반복
+# 가위바위보는 삼세판.
+for i in range(3) : 
+  comSRP = np.random.randint(1,3)
+  userSRP = int(input("1.Scissors 2.Rock 3.Paper [Choice](END : 0) : "))
+# comSRP = random.choice(list)
+
+# user, 1 : Scissors
+  if userSRP == 1 :
+    if comSRP == 1 :
+      print("user : Scissors, com : Scissors")
+      print("Draw")
+    elif comSRP == 2 :
+      print("user : Scissors, com : Rock")
+      print("Lose")
+      print("Game over")
+      break
+    elif comSRP == 3 :
+      print("user : Scissors, com : Paper")
+      print("Win")
+    else : 
+      userSRP == 0
+      print("End")
+      break
+
+# user, 2 : Rock
+  elif userSRP == 2 :
+    if comSRP == 1 :
+      print("user : Rock, com : Scissors")
+      print("Win")
+    elif comSRP == 2 :
+      print("user : Rock, com : Rock")
+      print("Draw")
+    elif comSRP == 3 :
+      print("user : Rock, com : Paper")
+      print("Lose")
+      print("Game over")
+      break
+    else : 
+      userSRP == 0
+      print("End")
+      break
+    
+
+# user, 3 : Paper
+  elif userSRP == 3 :
+    if comSRP == 1 :
+     print("user : Paper, com : Scissors")
+     print("Win")
+    elif comSRP == 2 :
+      print("user : Paper, com : Rock")
+      print("Lose")
+      print("Game over")
+      break
+    elif comSRP == 3 :
+      print("user : Paper, com : Paper")
+      print("Draw")
+    else : 
+      userSRP == 0
+      print("End")
+      break
+
+# game over - 1,2,3 외의 숫자일 경우, End : 0
+  else : 
+    if userSRP >= 3 or userSRP <= 0 :
+      print("Rechoice")
+    elif userSRP == 0 : 
+      print("End")
+      break
+  
